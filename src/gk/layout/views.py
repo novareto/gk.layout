@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from cromlech.browser import 
-from grokcore.component import global_utility
-from uvclight import implementer, context, get_template, View
+from uvclight import context, get_template, View
 from zope.interface import Interface
 
 
