@@ -1,9 +1,16 @@
-<dl>
-  <tal:service repeat="gate view.services()">
-    <dt>
-       <a tal:attributes="href gate.backurl">
-	  <span tal:content="gate.title" />
-       </a>
-    </dt>
-  </tal:service>
-</dl>
+<ul class="thumbnails" id="portals">
+  <li class="sticker" tal:repeat="gate view.portals">
+    <div class="thumbnail portalbox">
+      <a class="portaltitle" tal:attributes="href gate.url">
+        <span tal:content="gate.title" />
+      </a>
+      <div class="portaltext" tal:content="gate.dashboard" />
+      <div class="portalfooter">
+        <hr />
+        <a tal:attributes="href gate.url">
+          <span>Learn more...</span>
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+<div id="admin">
+  <h1>Administration</h1>
+  <ul> 
+    <li tal:repeat="link view.links">
+      <a tal:attributes="href link['url']"
+         tal:content="link['title']" />
+    </li>
+  </ul>
+</div>

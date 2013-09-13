@@ -4,6 +4,8 @@
 
   <include package="uvclight" />
   <include package="dolmen.message" />
+  <include package="dolmen.menu" />
+  <include package="dolmen.forms.table" />
   <grok:grok package="." />
 
 </configure>

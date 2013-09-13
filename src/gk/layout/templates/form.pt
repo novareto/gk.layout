@@ -1,4 +1,5 @@
-<form action="."
+<form class="main"
+      action="."
       i18n:domain="dolmen.form.base"
       tal:attributes="action view.action_url;
 		      id view.htmlId();

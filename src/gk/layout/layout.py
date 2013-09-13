@@ -3,10 +3,19 @@
 from cromlech.webob import response
 from dolmen.layout import Layout
 from dolmen.message import receive
-from grokcore.component import context
-from js.bootstrap import bootstrap
-from uvclight import get_template
+from dolmen.viewlet import ViewletManager
+from uvclight import context, get_template
 from zope.interface import Interface
+
+from .resources import styles
+
+
+class Top(ViewletManager):
+    context(Interface)
+
+
+class Footer(ViewletManager):
+    context(Interface)
 
 
 class GateLayout(Layout):
@@ -18,6 +27,7 @@ class GateLayout(Layout):
     title = u"Gatekeeper"
      
     def __call__(self, content, **namespace):
-        bootstrap.need()
+        styles.need()
+        namespace['user'] = self.request.environment.get('REMOTE_USER')
         namespace['gatekeeper_messages'] = list(receive())
         return Layout.__call__(self, content, **namespace)

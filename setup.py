@@ -10,11 +10,15 @@ history = open(join('docs', 'HISTORY.txt')).read()
 install_requires = [
     'cromlech.browser >= 0.5',
     'dolmen.message',
+    'dolmen.tales',
+    'dolmen.viewlet',
     'gatekeeper',
     'grokcore.component',
+    'js.bootstrap',
     'setuptools',
     'zope.component',
-    'js.bootstrap',
+    'dolmen.menu',
+    'dolmen.forms.table',
     ]
 
 tests_require = [
@@ -47,5 +51,6 @@ setup(name='gk.layout',
       # -*- Entry points: -*-
       [fanstatic.libraries]
       gatekeeper = gk.layout.resources:library
+      datepicker = gk.layout.resources:datepicker
       """,
       )

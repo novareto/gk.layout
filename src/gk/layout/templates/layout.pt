@@ -7,15 +7,44 @@ html1/DTD/xhtml1-strict.dtd">
   </head>
   <body>
     <div class="alert" tal:condition="gatekeeper_messages">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <button type="button" class="close" data-dismiss="alert"
+	      >&times;</button>
       <div tal:repeat="message gatekeeper_messages">
         <span tal:content="message.message" />
       </div>
     </div>
-    <div class="container">
-      <div class="content">
-	<div tal:replace="structure content" />
+    <div id="top">
+      <div class="cta cta-index">
+        <div class="container">
+          <h1>Gatekeeper</h1>
+        </div>
       </div>
     </div>
+    <div id="subtop" tal:condition="user">
+      <div class="container">
+	<h2 class="small">
+	  <i class="icon-user icon-white"></i>
+	  Keeping the gate for <span tal:replace="user" />
+	</h2>
+      </div>
+    </div>
+    <div id="subtop" tal:condition="not user">
+      <div class="container">
+	<h2 class="small">
+	  <i class="icon-lock icon-white"></i>
+	  <a href="http://sso.novareto.de:8000/login">Please login</a>
+	</h2>
+      </div>
+    </div>
+    <div tal:content="structure slot:top" />
+    <div id="body">
+      <div class="container">
+	<div class="content">
+	  <div tal:replace="structure content" />
+	</div>
+      </div>
+    </div>
+    <footer class="footer modal-footer"
+	    tal:content="structure slot:footer" />
   </body>
 </html>
