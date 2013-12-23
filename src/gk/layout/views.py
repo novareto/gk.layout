@@ -23,6 +23,15 @@ class Timeout(Page):
 class Unauthorized(Page):
     context(Interface)
     template = get_template('unauthorized.pt', __file__)
+    message = None
+
+    def set_message(self, message):
+        self.message = message
+
+
+class NotFound(Page):
+    context(Interface)
+    template = get_template('404.pt', __file__)
 
 
 class GatekeeperIndex(Page):
