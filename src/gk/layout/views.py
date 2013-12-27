@@ -2,10 +2,9 @@
 
 from cromlech.webob import Response
 from cromlech.sqlalchemy import get_session
-from dolmen.forms.base import DISPLAY, action, SuccessMarker
-from dolmen.forms.base import Field, Fields, Actions, Action
-from dolmen.forms.base.utils import apply_data_event
-from dolmen.forms.table import TableForm, TableActions
+from dolmen.forms.base import DISPLAY, SuccessMarker
+from dolmen.forms.base import Fields, Actions, Action
+from dolmen.forms.table import TableForm
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from gatekeeper.admin import IMessage, AdminRoot, MessagesRoot
@@ -67,7 +66,7 @@ class DeleteEntry(Action):
         send(u"Deletion successful.")
         url = get_absolute_url(form.context, form.request)
         return SuccessMarker('Deleted', True, url=url)
-        
+
 
 class MessagesIndex(TableForm):
     name('index')

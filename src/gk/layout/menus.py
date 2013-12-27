@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from uvclight import name, implementer
-from zope.interface import Interface
+from uvclight import name
 from dolmen.menu import Menu
 
 

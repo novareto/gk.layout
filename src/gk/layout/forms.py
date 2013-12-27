@@ -1,23 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from cromlech.sqlalchemy import get_session
-from cromlech.webob import Response, Request
-from dolmen.content import schema
+from cromlech.webob import Response
 from dolmen.forms.base import apply_data_event
-from dolmen.forms.base import action, Action, Actions, Fields, SuccessMarker
+from dolmen.forms.base import action, Fields, SuccessMarker, FAILURE
 from dolmen.forms.ztk import InvariantsValidation
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from dolmen.menu import menuentry
-from dolmen.view import query_view, make_layout_response
-from gatekeeper.admin import IMessage, Message, MessagesRoot, AdminRoot
+from dolmen.view import make_layout_response
+from gatekeeper.admin import IMessage, Message, MessagesRoot
 from gatekeeper.login import BaseLoginForm
-from grokcore.component import title, context, name, adapts, MultiAdapter
+from grokcore.component import title, context, name
 from grokcore.security import require
 from uvclight import get_template, Form
-from zope.cachedescriptors.property import CachedProperty
-from zope.interface import Interface, implementer
-
 from .menus import ContextualActions
 from .resources import gkdate
 
@@ -35,7 +30,7 @@ class AddForm(Form):
     context(MessagesRoot)
     title(u"Add")
     require('zope.Public')
-    
+
     fields = Fields(IMessage).omit('id')
     responseFactory = Response
     dataValidators = [InvariantsValidation]
@@ -62,7 +57,7 @@ class AddForm(Form):
         send(u"Content created.")
         url = get_absolute_url(self.context, self.request)
         return SuccessMarker('Created', True, url=url)
-        
+
 
 @menuentry(ContextualActions)
 class EditForm(Form):
@@ -89,7 +84,7 @@ class EditForm(Form):
         self.fields['enable'].strict_format = '%d/%m/%Y %H:%M'
         self.fields['disable'].strict_format = '%d/%m/%Y %H:%M'
         Form.updateForm(self)
-        
+
     @action(u"Update")
     def Update(self):
         data, errors = self.extractData()

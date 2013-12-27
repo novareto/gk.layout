@@ -25,7 +25,7 @@ class GateLayout(Layout):
     template = get_template('layout.pt', __file__)
 
     title = u"Gatekeeper"
-     
+
     def __call__(self, content, **namespace):
         styles.need()
         namespace['user'] = self.request.environment.get('REMOTE_USER')

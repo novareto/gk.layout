@@ -32,7 +32,7 @@ html1/DTD/xhtml1-strict.dtd">
       <div class="container">
 	<h2 class="small">
 	  <i class="icon-lock icon-white"></i>
-	  <a href="http://sso.novareto.de:8000/login">Please login</a>
+	  <a href="http://sso.novareto.de/login">Please login</a>
 	</h2>
       </div>
     </div>
