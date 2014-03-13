@@ -9,17 +9,17 @@ from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from gatekeeper.admin import IMessage, AdminRoot, MessagesRoot
 from gatekeeper.app import GateKeeper
-from uvclight import name, context, get_template, Page
+from uvclight import name, context, get_template, Page, View
 from zope.interface import Interface
 from dolmen.view import make_layout_response
 
 
-class Timeout(Page):
+class Timeout(View):
     context(Interface)
     template = get_template('timeout.pt', __file__)
 
 
-class Unauthorized(Page):
+class Unauthorized(View):
     context(Interface)
     template = get_template('unauthorized.pt', __file__)
     message = None
@@ -28,7 +28,7 @@ class Unauthorized(Page):
         self.message = message
 
 
-class NotFound(Page):
+class NotFound(View):
     context(Interface)
     template = get_template('404.pt', __file__)
 

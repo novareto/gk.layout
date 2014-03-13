@@ -1,5 +1,6 @@
 <form class="main"
       action="."
+      tal:condition="view.available()"
       i18n:domain="dolmen.form.base"
       tal:attributes="action view.action_url;
 		      id view.htmlId();
