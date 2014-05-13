@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from gatekeeper.app import GateKeeper
+from gatekeeper.login import LoginRoot
 from uvclight import context, order, Viewlet, viewletmanager
 
 from .layout import Top
@@ -23,6 +24,15 @@ class Alerts(Viewlet):
     viewletmanager(Top)
     order(15)
     context(GateKeeper)
+
+    def render(self):
+        return '<br />'.join(self.context.get_messages())
+
+
+class LoginAlerts(Viewlet):
+    slot(Top)
+    order(15)
+    context(LoginRoot)
 
     def render(self):
         return '<br />'.join(self.context.get_messages())
