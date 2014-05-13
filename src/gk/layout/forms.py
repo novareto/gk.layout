@@ -1,24 +1,22 @@
 # -*- coding: utf-8 -*-
 
-from cromlech.webob import Response
 from dolmen.forms.base import apply_data_event
-from dolmen.forms.base import action, Fields, SuccessMarker, FAILURE
 from dolmen.forms.ztk import InvariantsValidation
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
-from dolmen.menu import menuentry
-from dolmen.view import make_layout_response
+
 from gatekeeper.admin import IMessage, Message, MessagesRoot
 from gatekeeper.login import BaseLoginForm
-from grokcore.component import title, context, name
-from grokcore.security import require
-from uvclight import get_template, Form
+
+from uvclight import get_template, Form, action, Fields
+from uvclight import SuccessMarker, SUCCESS, FAILURE
+from uvclight import title, context, name, require, menuentry
+
 from .menus import ContextualActions
 from .resources import gkdate
 
 
 class LoginForm(BaseLoginForm):
-    responseFactory = Response
     template = get_template('form.pt', __file__)
 
 
@@ -27,14 +25,12 @@ class AddForm(Form):
     """A very generic add form.
     """
     name('add')
-    context(MessagesRoot)
     title(u"Add")
     require('zope.Public')
-
+    context(MessagesRoot)
+    
     fields = Fields(IMessage).omit('id')
-    responseFactory = Response
     dataValidators = [InvariantsValidation]
-    make_response = make_layout_response
 
     @property
     def action_url(self):
@@ -64,16 +60,14 @@ class EditForm(Form):
     """A very generic add form.
     """
     name('index')
-    context(Message)
     title(u"Edit")
     require('zope.Public')
-
+    context(Message)
+    
     ignoreContent = False
     ignoreRequest = True
     fields = Fields(IMessage)
-    responseFactory = Response
     dataValidators = [InvariantsValidation]
-    make_response = make_layout_response
 
     @property
     def action_url(self):

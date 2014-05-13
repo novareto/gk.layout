@@ -3,24 +3,21 @@
 from cromlech.webob import Response
 from cromlech.sqlalchemy import get_session
 from dolmen.forms.base import DISPLAY, SuccessMarker
-from dolmen.forms.base import Fields, Actions, Action
+from dolmen.forms.base import Actions, Action
 from dolmen.forms.table import TableForm
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from gatekeeper.admin import IMessage, AdminRoot, MessagesRoot
 from gatekeeper.app import GateKeeper
-from uvclight import name, context, get_template, Page
+from uvclight import name, context, get_template, Page, Fields, TableForm
 from zope.interface import Interface
-from dolmen.view import make_layout_response
 
 
 class Timeout(Page):
-    context(Interface)
     template = get_template('timeout.pt', __file__)
 
 
 class Unauthorized(Page):
-    context(Interface)
     template = get_template('unauthorized.pt', __file__)
     message = None
 
@@ -29,7 +26,6 @@ class Unauthorized(Page):
 
 
 class NotFound(Page):
-    context(Interface)
     template = get_template('404.pt', __file__)
 
 
@@ -75,8 +71,6 @@ class MessagesIndex(TableForm):
     ignoreRequest = False
     ignoreContent = False
     postOnly = True
-    responseFactory = Response
-    make_response = make_layout_response
     mode = DISPLAY
 
     actions = Actions(DeleteEntry('Delete'))

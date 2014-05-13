@@ -4,7 +4,7 @@
       <a class="portaltitle" tal:attributes="href gate.url">
         <span tal:content="gate.title" />
       </a>
-      <div class="portaltext" tal:content="gate.dashboard" />
+      <div class="portaltext" tal:content="structure gate.dashboard" />
       <div class="portalfooter">
         <hr />
         <a tal:attributes="href gate.url">

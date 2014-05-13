@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from cromlech.browser import slot
-from dolmen.viewlet import order, Viewlet
 from gatekeeper.app import GateKeeper
-from uvclight import context
+from uvclight import context, order, Viewlet, viewletmanager
+
 from .layout import Top
 from .menus import ContextualActions
 
 
 class ContextualMenuDisplay(Viewlet):
-    slot(Top)
+    viewletmanager(Top)
     order(20)
 
     def update(self):
@@ -21,7 +20,7 @@ class ContextualMenuDisplay(Viewlet):
 
 
 class Alerts(Viewlet):
-    slot(Top)
+    viewletmanager(Top)
     order(15)
     context(GateKeeper)
 

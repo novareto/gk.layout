@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from cromlech.webob import response
-from dolmen.layout import Layout
 from dolmen.message import receive
-from dolmen.viewlet import ViewletManager
-from uvclight import context, get_template
+from uvclight import Layout, ViewletManager, context, get_template
 from zope.interface import Interface
-
 from .resources import styles
 
 
@@ -21,7 +17,6 @@ class Footer(ViewletManager):
 class GateLayout(Layout):
     context(Interface)
 
-    responseFactory = response.Response
     template = get_template('layout.pt', __file__)
 
     title = u"Gatekeeper"
