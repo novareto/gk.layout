@@ -4,7 +4,6 @@ from cromlech.webob import Response
 from cromlech.sqlalchemy import get_session
 from dolmen.forms.base import DISPLAY, SuccessMarker
 from dolmen.forms.base import Actions, Action
-from dolmen.forms.table import TableForm
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from gatekeeper.admin import IMessage, AdminRoot, MessagesRoot

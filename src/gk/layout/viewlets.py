@@ -30,7 +30,7 @@ class Alerts(Viewlet):
 
 
 class LoginAlerts(Viewlet):
-    slot(Top)
+    viewletmanager(Top)
     order(15)
     context(LoginRoot)
 
