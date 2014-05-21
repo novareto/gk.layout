@@ -1,12 +1,17 @@
 $(document).ready(function() {
-    $('#form-field-enable').datetimepicker({
-        format: 'dd/MM/yyyy hh:mm',
-        language: 'en'
-    });
 
-    $('#form-field-disable').datetimepicker({
-        format: 'dd/MM/yyyy hh:mm',
-        language: 'en'
-    });
+    function add_datepicker(inputid) {
+	var field = $(inputid).parent('.field');
+	field.addClass('input-append');
+	field.append('<span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>');
+
+	field.datetimepicker({
+            format: 'DD/MM/YY HH:mm',
+            language: 'en'
+	});
+    }
+
+    add_datepicker('#form-field-disable');
+    add_datepicker('#form-field-enable');
 
 })

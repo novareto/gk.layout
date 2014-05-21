@@ -8,8 +8,10 @@ from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from gatekeeper.admin import IMessage, AdminRoot, MessagesRoot
 from gatekeeper.app import GateKeeper
-from uvclight import name, context, get_template, Page, Fields, TableForm
+from uvclight import name, context, get_template
+from uvclight import AddForm, Page, Fields, TableForm
 from zope.interface import Interface
+from . import i18n as _
 
 
 class Timeout(Page):
@@ -58,7 +60,7 @@ class DeleteEntry(Action):
             if line.selected:
                 obj = line.getContent()
                 session.delete(obj)
-        send(u"Deletion successful.")
+        send(_(u"Deletion successful."))
         url = get_absolute_url(form.context, form.request)
         return SuccessMarker('Deleted', True, url=url)
 

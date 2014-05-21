@@ -2,7 +2,7 @@
 
 from gatekeeper.app import GateKeeper
 from gatekeeper.login import LoginRoot
-from uvclight import context, order, Viewlet, viewletmanager
+from uvclight import get_template, context, order, Viewlet, viewletmanager
 
 from .layout import Top
 from .menus import ContextualActions
@@ -24,15 +24,12 @@ class Alerts(Viewlet):
     viewletmanager(Top)
     order(15)
     context(GateKeeper)
+    template = get_template('messages.pt', __file__)
 
-    def render(self):
-        return '<br />'.join(self.context.get_messages())
 
 
 class LoginAlerts(Viewlet):
     viewletmanager(Top)
     order(15)
     context(LoginRoot)
-
-    def render(self):
-        return '<br />'.join(self.context.get_messages())
+    template = get_template('messages.pt', __file__)
