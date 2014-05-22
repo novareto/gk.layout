@@ -18,7 +18,7 @@ from . import i18n as _
 
 
 class LoginForm(BaseLoginForm):
-    template = get_template('form.pt', __file__)
+    pass
 
 
 @menuentry(ContextualActions)
@@ -26,7 +26,7 @@ class AddForm(Form):
     """A very generic add form.
     """
     name('add')
-    title(_(u"add_message", default=u"Add message"))
+    title(_(u"add_message", default=_(u"Add message")))
     require('zope.Public')
     context(MessagesRoot)
     

@@ -73,8 +73,9 @@ class MessagesIndex(TableForm):
     ignoreContent = False
     postOnly = True
     mode = DISPLAY
+    css_class = "table table-striped table-condensed"
 
-    actions = Actions(DeleteEntry('Delete'))
+    actions = Actions(DeleteEntry(_('Delete')))
 
     @property
     def tableFields(self):

@@ -67,3 +67,8 @@ msgstr "Benutzername"
 msgid "Your contents get updated."
 msgstr "Der Inhalt wurde angepasst."
 
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Add messages"
+msgstr "Neue Nachricht"
