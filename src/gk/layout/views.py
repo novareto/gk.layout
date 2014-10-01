@@ -46,7 +46,7 @@ class AdminIndex(Page):
 
     def update(self):
         self.links = ({
-            'title': u"Messages management",
+            'title': _(u"Messages management", default="Messages management"),
             'url': get_absolute_url(self.context.messages, self.request),
             },)
 

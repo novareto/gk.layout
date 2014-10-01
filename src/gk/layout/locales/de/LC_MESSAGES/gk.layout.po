@@ -1,8 +1,8 @@
-#, fuzzy
+# , fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-15 12:48+0000\n"
+"POT-Creation-Date: 2014-05-27 09:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: gk.layout\n"
 
-#: ./forms.py:29
+#: ./forms.py:46
 msgid "Add"
 msgstr "Hinzufügen"
 
@@ -23,31 +23,35 @@ msgstr "Hinzufügen"
 msgid "Administration"
 msgstr "Administration"
 
-#: ./forms.py:54
+#: ./forms.py:58
 msgid "Content created."
 msgstr "Der Inhalt wurde erstellt."
 
-#: ./views.py:62
+#: ./views.py:78
+msgid "Delete"
+msgstr "Löschen"
+
+#: ./views.py:63
 msgid "Deletion successful."
 msgstr "Der Inhalt wurde gelöscht."
 
-#: ./forms.py:64
-msgid "Edit"
-msgstr "Bearbeiten"
-
-#: ./templates/layout.pt:17
+#: ./templates/layout.pt:19
 msgid "Gatekeeper"
 msgstr "Gatekeeper"
 
-#: ./templates/layout.pt:25
+#: ./templates/layout.pt:27
 msgid "Keeping the gate for"
 msgstr ""
+
+#: ./views.py:49
+msgid "Messages management"
+msgstr "Nachrichten Center"
 
 #: ./templates/login.pt:17
 msgid "Password"
 msgstr "Passwort"
 
-#: ./templates/layout.pt:33
+#: ./templates/layout.pt:37
 msgid "Please login"
 msgstr "Bitte Anmelden"
 
@@ -55,7 +59,7 @@ msgstr "Bitte Anmelden"
 msgid "Sign in"
 msgstr "Anmelden"
 
-#: ./forms.py:83
+#: ./forms.py:87
 msgid "Update"
 msgstr "Bearbeiten"
 
@@ -63,12 +67,16 @@ msgstr "Bearbeiten"
 msgid "Username"
 msgstr "Benutzername"
 
-#: ./forms.py:94
+#: ./forms.py:98
 msgid "Your contents get updated."
 msgstr "Der Inhalt wurde angepasst."
 
-msgid "Delete"
-msgstr "Löschen"
+#. Default: "Add message"
+#: ./forms.py:29
+msgid "add_message"
+msgstr "Nachricht hinzufügen"
 
-msgid "Add messages"
-msgstr "Neue Nachricht"
+#. Default: "Edit message"
+#: ./forms.py:68
+msgid "edit_message"
+msgstr "Nachricht bearbeiten"
