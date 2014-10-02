@@ -33,7 +33,7 @@
       <div class="container">
 	<h2 class="small" >
 	  <i class="icon-lock icon-white"></i>
-	  <a href="http://sso.novareto.de/login"
+	  <a href="login"
 	     ><span i18n:translate="">Please login</span
 	  ></a>
 	</h2>
