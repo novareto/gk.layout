@@ -19,6 +19,7 @@ install_requires = [
     'zope.component',
     'dolmen.menu',
     'dolmen.forms.table',
+    'uvc.themes.btwidgets',
     ]
 
 tests_require = [

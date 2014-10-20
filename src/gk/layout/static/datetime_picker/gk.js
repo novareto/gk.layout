@@ -6,8 +6,8 @@ $(document).ready(function() {
 	field.append('<span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>');
 
 	field.datetimepicker({
-            format: 'DD/MM/YY HH:mm',
-            language: 'en'
+        format: 'DD.MM.YYYY HH:mm:SS',
+            language: 'de'
 	});
     }
 
