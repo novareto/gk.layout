@@ -8,7 +8,9 @@
   <include package="dolmen.menu" />
   <include package="dolmen.forms.table" />
   <grok:grok package="uvc.themes.btwidgets.widgets" />
+  <!--
   <grok:grok package="uvc.themes.btwidgets.form" />
+-->
   <include package="zope.i18n" file="meta.zcml" />
   <i18n:registerTranslations directory="locales" />
 
