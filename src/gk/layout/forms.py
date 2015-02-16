@@ -10,7 +10,8 @@ from gatekeeper.login import BaseLoginForm
 
 from uvclight import get_template, Form, action, Fields
 from uvclight import SuccessMarker, SUCCESS, FAILURE
-from uvclight import title, context, name, require, menuentry
+from uvclight import title, context, name, menuentry
+from uvclight.auth import require
 
 from .menus import ContextualActions
 from .resources import gkdate
@@ -29,7 +30,7 @@ class AddForm(Form):
     title(_(u"add_message", default=_(u"Add message")))
     require('zope.Public')
     context(MessagesRoot)
-    
+
     fields = Fields(IMessage).omit('id')
     dataValidators = [InvariantsValidation]
 

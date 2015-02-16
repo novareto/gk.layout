@@ -1,8 +1,7 @@
 <div id="messages">
-  <tal:messages repeat="message context.get_messages()">
-    <div tal:attributes="class message['style']">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <span tal:content="message['msg']" />
-    </div>
-  </tal:messages>
+  <p tal:repeat="message context.get_messages()"
+      tal:attributes="class message['style'] + ' bg-primary'">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <span tal:content="message['msg']" />
+  </p>
 </div>
