@@ -53,7 +53,7 @@ class AddForm(Form):
         if data['activation'] != ON_DATES:
             del data['enable']
             del data['disable']
-    
+
         item = self.context.model(**data)
         self.context.add(item)
         send(_(u"Content created."))
@@ -69,7 +69,7 @@ class EditForm(Form):
     title(_(u"edit_message", default=u"Edit message"))
     require('zope.Public')
     context(Message)
-    
+
     ignoreContent = False
     ignoreRequest = True
     fields = Fields(IMessage)
