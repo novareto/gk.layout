@@ -6,7 +6,7 @@ from dolmen.forms.base import DISPLAY, SuccessMarker
 from dolmen.forms.base import Actions, Action
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
-from gatekeeper.admin import IMessage, AdminRoot, MessagesRoot
+from gk.admin import IMessage, AdminRoot, MessagesRoot
 from gatekeeper.app import GateKeeper
 from uvclight import name, context, get_template
 from uvclight import AddForm, Page, Fields, TableForm

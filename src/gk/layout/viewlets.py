@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from gatekeeper.app import GateKeeper
-from gatekeeper.login import LoginRoot
+from gk.login.models import LoginRoot
 from uvclight import get_template, context, order, Viewlet, viewletmanager
 
 from .layout import Top

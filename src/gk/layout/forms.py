@@ -5,8 +5,8 @@ from dolmen.forms.ztk import InvariantsValidation
 from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 
-from gatekeeper.admin import IMessage, Message, MessagesRoot, ON_DATES
-from gatekeeper.login import BaseLoginForm
+from gk.admin import IMessage, Message, MessagesRoot, ON_DATES
+from gk.login.form import BaseLoginForm
 
 from uvclight import get_template, Form, action, Fields
 from uvclight import SuccessMarker, SUCCESS, FAILURE
