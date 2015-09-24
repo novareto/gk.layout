@@ -8,18 +8,27 @@ readme = open('README.txt').read()
 history = open(join('docs', 'HISTORY.txt')).read()
 
 install_requires = [
-    'cromlech.browser >= 0.5',
+    'cromlech.sqlalchemy',
+    'cromlech.webob',
+    'dolmen.clockwork',
+    'dolmen.forms.base',
+    'dolmen.forms.table',
+    'dolmen.forms.ztk',
+    'dolmen.location',
+    'dolmen.menu',
     'dolmen.message',
     'dolmen.tales',
-    'dolmen.viewlet',
+    'fanstatic',
     'gatekeeper',
-    'grokcore.component',
+    'gk.admin',
+    'gk.login',
     'js.bootstrap',
     'setuptools',
-    'zope.component',
-    'dolmen.menu',
-    'dolmen.forms.table',
     'uvc.themes.btwidgets',
+    'uvclight',
+    'zope.i18n',
+    'zope.i18nmessageid',
+    'zope.interface',
     ]
 
 tests_require = [
