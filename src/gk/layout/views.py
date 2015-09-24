@@ -8,17 +8,19 @@ from dolmen.location import get_absolute_url
 from dolmen.message.utils import send
 from gk.admin import IMessage, AdminRoot, MessagesRoot
 from gatekeeper.app import GateKeeper
-from uvclight import name, context, get_template
+from uvclight import layer, name, context, get_template
 from uvclight import AddForm, Page, Fields, TableForm
 from zope.interface import Interface
-from . import i18n as _
+from . import i18n as _, DefaultLayer
 
 
 class Timeout(Page):
+    layer(DefaultLayer)
     template = get_template('timeout.pt', __file__)
 
 
 class Unauthorized(Page):
+    layer(DefaultLayer)
     template = get_template('unauthorized.pt', __file__)
     message = None
 
@@ -27,12 +29,15 @@ class Unauthorized(Page):
 
 
 class NotFound(Page):
+    layer(DefaultLayer)
     template = get_template('404.pt', __file__)
 
 
 class GatekeeperIndex(Page):
     name('index')
     context(GateKeeper)
+    layer(DefaultLayer)
+    
     template = get_template('entrance.pt', __file__)
 
     def update(self):
@@ -42,6 +47,8 @@ class GatekeeperIndex(Page):
 class AdminIndex(Page):
     name('index')
     context(AdminRoot)
+    layer(DefaultLayer)
+    
     template = get_template('admin.pt', __file__)
 
     def update(self):
@@ -68,7 +75,8 @@ class DeleteEntry(Action):
 class MessagesIndex(TableForm):
     name('index')
     context(MessagesRoot)
-
+    layer(DefaultLayer)
+    
     ignoreRequest = False
     ignoreContent = False
     postOnly = True

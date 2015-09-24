@@ -5,6 +5,7 @@ from zope.i18nmessageid import MessageFactory
 i18n = MessageFactory("gk.layout")
 
 
+from cromlech.browser.interfaces import ITypedRequest
 from dolmen.clockwork.formatters import (
     DefaultFormDateManager,
     DefaultFormDatetimeManager,
@@ -22,3 +23,8 @@ class MyDefaultFormDatetimeManager(DefaultFormDatetimeManager):
 
 class MyDefaultFormTimeManager(DefaultFormTimeManager):
     size = "medium"
+
+
+class DefaultLayer(ITypedRequest):
+    """Default Layer for GateKeeper
+    """

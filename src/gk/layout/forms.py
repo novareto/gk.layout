@@ -10,16 +10,16 @@ from gk.login.form import BaseLoginForm
 
 from uvclight import get_template, Form, action, Fields
 from uvclight import SuccessMarker, SUCCESS, FAILURE
-from uvclight import title, context, name, menuentry
+from uvclight import title, context, name, menuentry, layer
 from uvclight.auth import require
 
 from .menus import ContextualActions
 from .resources import gkdate
-from . import i18n as _
+from . import i18n as _, DefaultLayer
 
 
 class LoginForm(BaseLoginForm):
-    pass
+    layer(DefaultLayer)
 
 
 @menuentry(ContextualActions)
@@ -30,7 +30,8 @@ class AddForm(Form):
     title(_(u"add_message", default=_(u"Add message")))
     require('zope.Public')
     context(MessagesRoot)
-
+    layer(DefaultLayer)
+    
     fields = Fields(IMessage).omit('id')
     dataValidators = [InvariantsValidation]
 
@@ -69,7 +70,8 @@ class EditForm(Form):
     title(_(u"edit_message", default=u"Edit message"))
     require('zope.Public')
     context(Message)
-
+    layer(DefaultLayer)
+    
     ignoreContent = False
     ignoreRequest = True
     fields = Fields(IMessage)
